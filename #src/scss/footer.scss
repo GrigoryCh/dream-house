@@ -1,0 +1,228 @@
+.footer {
+   position: relative;
+   background: #003458;
+ 
+   &:before {
+      pointer-events: none;
+      content: " ";
+      border-radius: 50%;
+      position: absolute;
+      width: 537px;
+      height: 537px;
+      left: -212px;
+      bottom: -182px;
+      background: linear-gradient(303.61deg, rgba(255, 255, 255, 0.06) 0.62%, rgba(255, 255, 255, 0) 90.78%);
+      transform: rotate(-180deg);
+   }
+   &:after {
+      pointer-events: none;
+      content: " ";
+      border-radius: 50%;
+      position: absolute;
+      width: 537px;
+      height: 537px;
+      right: -212px;
+      top: -182px;
+      background: linear-gradient(303.61deg, rgba(255, 255, 255, 0.06) 0.62%, rgba(255, 255, 255, 0) 90.78%);
+   }
+
+   // .footer__body
+
+   &__body {
+      @media (min-width: $md3+px) {
+      display: grid;
+      grid-template-columns:  1fr 45.44%;
+      }
+   }
+}
+
+.contacts-footer {
+   @media (min-width: $md3+px) {
+   max-width: 422px;
+   }
+   @include adaptive-value("padding-top", 70, 40, 1);
+   @include adaptive-value("padding-bottom", 82, 40, 1);
+
+   // .contacts-footer__title
+
+   &__title {
+      font-weight: 800;
+      @include adaptive-value("font-size", 48, 25, 1);
+      line-height: 117%;
+      letter-spacing: 0.01em;
+      color: #FFFFFF;
+      @include adaptive-value("margin-bottom", 80, 30, 1);
+   }
+
+   // .contacts-footer__items
+
+   &__items {
+      & > *:not(:last-child) {
+         @include adaptive-value("margin-bottom", 46, 25, 1);
+      }
+   }
+}
+.item-contacts {
+     @media (min-width: $md3+px) {
+      max-width: 395px;
+     }
+   & > *:not(:last-child) {
+      @include adaptive-value("margin-bottom", 18, 10, 1);
+   }
+   // .item-contacts__title
+   @include adaptive-value("font-size", 24, 18, 1);
+   &__title {
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+   }
+
+   // .item-contacts__content
+
+   &__content {
+      color: #fff;
+      &_address {
+         line-height: 1.5;
+      }
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover){
+         &:hover {
+         color: $secondaryColor;
+         }
+      }
+   }
+}
+
+.social {
+   z-index: 20;
+   display: flex;
+   align-items: center;
+   // .social__item
+  
+   &__item { pointer-events: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 40px;
+      @include adaptive-value("font-size", 33, 25, 1);
+        @media (max-width: $md3+px) {
+           line-height: 1.5;
+        }
+      color: #fff;
+      &:not(:last-child) {
+         margin: 0px 32px 0px 0px;
+      }
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover){
+         &:hover {
+         color: $secondaryColor;
+         }
+      }
+   }
+}
+
+.ask-footer {
+   background: #fff;
+   margin: 34px 0 64px 0;
+   @include adaptive-value("padding-left", 40, 15, 1);
+   @include adaptive-value("padding-right", 40, 15, 1);
+   @include adaptive-value("padding-top", 50, 40, 1);
+   @include adaptive-value("padding-bottom", 50, 40, 1);
+   @media (min-width: $md3+px) {
+   position: relative;
+   &:before {
+      content: " ";
+      position: absolute;
+      width: 74.51%;
+      height: 34px;
+      top: -34px;
+      left: 12.74%;
+      background-color:$secondaryColor;
+   }
+   &:after {
+      content: " ";
+      position: absolute;
+      width: 74.51%;
+      height: 64px;
+      bottom: -64px;
+      left: 12.74%;
+      background-color:$secondaryColor;
+      }
+   }
+   @media (max-width: $md3+px) {
+      margin: 0 -15px;
+   }
+   // .ask-footer__title
+
+   &__title {
+      font-weight: 800;
+      @include adaptive-value("font-size", 32, 22, 1);
+      letter-spacing: 0.01em;
+      @include adaptive-value("margin-bottom", 55, 35, 1);
+      text-align: left;
+        @media (max-width: $md3+px) {
+           text-align: center;
+        }
+   }
+
+   // .ask-footer__form
+
+   &__form {
+      display: grid;
+      grid-auto-flow: row;
+      gap: 32px;
+      max-width: 518px;
+      @media (max-width: $md3+px) {
+      margin: 0 auto;     
+      max-width: 100%;
+      }
+   }
+
+   // .ask-footer__input
+
+   &__input, &__textarea {
+      @include adaptive-value("font-size", 18, 16, 1);
+      color: #828282;
+      display: block;
+      @include adaptive-value("min-height", 70, 50, 1);
+      background-color: #F2F2F2;
+      padding: 0 32px;
+      &::placeholder {
+			opacity: 1;
+			}
+      &:focus {
+         color: $mainColor;
+         &::placeholder {
+            opacity: 0;
+            }
+      }
+   }
+
+   // .ask-footer__textarea
+
+   &__textarea {
+      @include adaptive-value("min-height", 219, 150, 1);
+      padding: 26px 32px 0;
+   }
+
+   // .ask-footer__button
+
+   &__button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0px 15px;
+      @include adaptive-value("font-size", 24, 18, 1);
+      font-weight: 800;
+      color: #fff;
+      background: #003458;
+      transition: all 0.3s ease 0s;
+      @include adaptive-value("min-height", 70, 50, 1);
+      width: 100%;
+      @media (any-hover: hover){
+         &:hover {
+         background: $secondaryColor;
+         }
+      }
+   }
+}
